@@ -76,12 +76,6 @@ public class P2Utils : MonoBehaviour
         }
     }
 
-    public void disableTracking(bool enabled)
-    {
-        UnityEngine.XR.XRDevice.DisableAutoXRCameraTracking(leftEye, enabled);
-        UnityEngine.XR.XRDevice.DisableAutoXRCameraTracking(rightEye, enabled);
-    }
-
     public void setIODDistance(float distance)
     {
         iod = distance;
