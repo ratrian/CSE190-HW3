@@ -103,6 +103,16 @@ SubShader {
                     return half4(0, 0, 0, 0);
                 }
                 break;
+            case 4: // Inverted
+                if (unity_StereoEyeIndex == 0) { // Left
+                    tex = texCUBE(_TexRight, i.texcoord);
+                    c = DecodeHDR(tex, _TexRight_HDR);
+                }
+                else { // Right
+                    tex = texCUBE(_TexLeft, i.texcoord);
+                    c = DecodeHDR(tex, _TexRight_HDR);
+                }
+                break;
             }
 
             c = c * _Tint.rgb * unity_ColorSpaceDouble.rgb;

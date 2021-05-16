@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class P2Utils : MonoBehaviour
 {
-  public enum RenderingMode { Stereo, Mono, LeftOnly, RightOnly };
+  public enum RenderingMode { Stereo, Mono, LeftOnly, RightOnly, Inverted };
   public Camera leftEye;
   public Camera rightEye;
   public GameObject leftParent;
@@ -70,6 +70,11 @@ public class P2Utils : MonoBehaviour
             break;
         case RenderingMode.RightOnly:
             Shader.SetGlobalInt("_RenderingMode", 3);
+            rightEye.ResetStereoViewMatrices();
+            rightEye.ResetStereoProjectionMatrices();
+            break;
+        case RenderingMode.Inverted:
+            Shader.SetGlobalInt("_RenderingMode", 4);
             rightEye.ResetStereoViewMatrices();
             rightEye.ResetStereoProjectionMatrices();
             break;

@@ -17,7 +17,7 @@ public class StereoModesBehaviour : MonoBehaviour
     {
         if (OVRInput.GetDown(OVRInput.Button.One))
         {
-            if (renderingMode == P2Utils.RenderingMode.Stereo)
+            if ((renderingMode == P2Utils.RenderingMode.Stereo))
             {
                 renderingMode = P2Utils.RenderingMode.Mono;
                 GameObject.Find("OVRCameraRig").GetComponent<P2Utils>().changeRenderingMode(renderingMode);
@@ -33,11 +33,13 @@ public class StereoModesBehaviour : MonoBehaviour
                 GameObject.Find("OVRCameraRig").GetComponent<P2Utils>().changeRenderingMode(renderingMode);
             }
             else if (renderingMode == P2Utils.RenderingMode.RightOnly)
+            {       
+                renderingMode = P2Utils.RenderingMode.Inverted;
+                GameObject.Find("OVRCameraRig").GetComponent<P2Utils>().changeRenderingMode(renderingMode);
+            }
+            else if (renderingMode == P2Utils.RenderingMode.Inverted)
             {
                 renderingMode = P2Utils.RenderingMode.Stereo;
-                /*Camera temp = GameObject.Find("OVRCameraRig").GetComponent<P2Utils>().rightEye;
-                GameObject.Find("OVRCameraRig").GetComponent<P2Utils>().rightEye = GameObject.Find("OVRCameraRig").GetComponent<P2Utils>().leftEye;
-                GameObject.Find("OVRCameraRig").GetComponent<P2Utils>().leftEye = temp;*/
                 GameObject.Find("OVRCameraRig").GetComponent<P2Utils>().changeRenderingMode(renderingMode);
             }
         }
