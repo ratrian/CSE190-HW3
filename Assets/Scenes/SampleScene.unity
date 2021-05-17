@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 85853959}
   - component: {fileID: 85853958}
   m_Layer: 0
-  m_Name: TopRightQuad
+  m_Name: TopRightQuad1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 367775442}
   - component: {fileID: 367775441}
   m_Layer: 0
-  m_Name: BottomQuad
+  m_Name: BottomQuad1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 380057179}
   - component: {fileID: 380057178}
   m_Layer: 0
-  m_Name: BottomQuad
+  m_Name: BottomQuad2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -524,7 +524,7 @@ GameObject:
   - component: {fileID: 500120692}
   - component: {fileID: 500120691}
   m_Layer: 0
-  m_Name: BottomLeftQuad
+  m_Name: BottomLeftQuad1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -620,7 +620,7 @@ GameObject:
   - component: {fileID: 603681607}
   - component: {fileID: 603681606}
   m_Layer: 0
-  m_Name: LeftQuad
+  m_Name: LeftQuad1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -961,7 +961,7 @@ GameObject:
   - component: {fileID: 890873743}
   - component: {fileID: 890873742}
   m_Layer: 0
-  m_Name: TopRightQuad
+  m_Name: TopRightQuad2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1057,7 +1057,7 @@ GameObject:
   - component: {fileID: 903094485}
   - component: {fileID: 903094484}
   m_Layer: 0
-  m_Name: TopQuad
+  m_Name: TopQuad1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1153,7 +1153,7 @@ GameObject:
   - component: {fileID: 1005147401}
   - component: {fileID: 1005147400}
   m_Layer: 0
-  m_Name: LeftQuad
+  m_Name: LeftQuad2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1249,7 +1249,7 @@ GameObject:
   - component: {fileID: 1082530910}
   - component: {fileID: 1082530909}
   m_Layer: 0
-  m_Name: TopLeftQuad
+  m_Name: TopLeftQuad2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1376,7 +1376,7 @@ GameObject:
   - component: {fileID: 1140303703}
   - component: {fileID: 1140303702}
   m_Layer: 0
-  m_Name: BottomRightQuad
+  m_Name: BottomRightQuad1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1594,7 +1594,7 @@ GameObject:
   - component: {fileID: 1484989342}
   - component: {fileID: 1484989341}
   m_Layer: 0
-  m_Name: RightQuad
+  m_Name: RightQuad1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1781,7 +1781,7 @@ GameObject:
   - component: {fileID: 1586687263}
   - component: {fileID: 1586687262}
   m_Layer: 0
-  m_Name: BottomRightQuad
+  m_Name: BottomRightQuad2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1877,7 +1877,7 @@ GameObject:
   - component: {fileID: 1700609472}
   - component: {fileID: 1700609471}
   m_Layer: 0
-  m_Name: BottomLeftQuad
+  m_Name: BottomLeftQuad2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1973,7 +1973,7 @@ GameObject:
   - component: {fileID: 1856312096}
   - component: {fileID: 1856312095}
   m_Layer: 0
-  m_Name: RightQuad
+  m_Name: RightQuad2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2069,7 +2069,7 @@ GameObject:
   - component: {fileID: 1964057532}
   - component: {fileID: 1964057531}
   m_Layer: 0
-  m_Name: TopLeftQuad
+  m_Name: TopLeftQuad1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2165,7 +2165,7 @@ GameObject:
   - component: {fileID: 2039736906}
   - component: {fileID: 2039736905}
   m_Layer: 0
-  m_Name: TopQuad
+  m_Name: TopQuad2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
