@@ -43,7 +43,10 @@ public class LagBehaviour : MonoBehaviour
         }
         else if (OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger))
         {
-            numFramesRenderingDelay++;
+            if (numFramesRenderingDelay < 10)
+            {
+                numFramesRenderingDelay++;
+            }
             //
         }
         GameObject.Find("RenderingDelay").GetComponent<UnityEngine.UI.Text>().text = "Rendering Delay:\n" + numFramesRenderingDelay.ToString() + " frames";
