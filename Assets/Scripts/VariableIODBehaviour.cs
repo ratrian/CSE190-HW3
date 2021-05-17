@@ -10,6 +10,7 @@ public class VariableIODBehaviour : MonoBehaviour
     void Start()
     {
         iod = 0.065f;
+        GameObject.Find("OVRCameraRig").GetComponent<P2Utils>().setIODDistance(iod);
     }
 
     // Update is called once per frame
@@ -21,7 +22,15 @@ public class VariableIODBehaviour : MonoBehaviour
         }
         else
         {
-            iod += OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).x;
+            iod += 0.001f * OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).x;
+            if (iod < -0.1f)
+            {
+                iod = -0.1f;
+            }
+            else if (iod > 0.3f)
+            {
+                iod = 0.3f;
+            }
         }
         GameObject.Find("OVRCameraRig").GetComponent<P2Utils>().setIODDistance(iod);
     }
