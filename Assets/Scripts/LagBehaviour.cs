@@ -10,6 +10,8 @@ public class LagBehaviour : MonoBehaviour
     List<Vector3> rightEyePos = new List<Vector3>();
     List<Quaternion> leftEyeRot = new List<Quaternion>();
     List<Quaternion> rightEyeRot = new List<Quaternion>();
+    List<Vector3> controllerPos = new List<Vector3>();
+    List<Quaternion> controllerRot = new List<Quaternion>();
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,8 @@ public class LagBehaviour : MonoBehaviour
                 rightEyePos.Clear();
                 leftEyeRot.Clear();
                 rightEyeRot.Clear();
+                controllerPos.Clear();
+                controllerRot.Clear();
             }
         }
         else if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
@@ -43,6 +47,8 @@ public class LagBehaviour : MonoBehaviour
             rightEyePos.Clear();
             leftEyeRot.Clear();
             rightEyeRot.Clear();
+            controllerPos.Clear();
+            controllerRot.Clear();
         }
         GameObject.Find("TrackingLag").GetComponent<UnityEngine.UI.Text>().text = "Tracking Lag:\n" + numFramesTrackingLag.ToString() + " frames";
         if (i < numFramesTrackingLag - 1)
@@ -52,6 +58,8 @@ public class LagBehaviour : MonoBehaviour
             rightEyePos.Add(GameObject.Find("rparent").transform.position);
             leftEyeRot.Add(GameObject.Find("lparent").transform.rotation);
             rightEyeRot.Add(GameObject.Find("rparent").transform.rotation);
+            controllerPos.Add(GameObject.Find("controller_l").transform.position);
+            controllerRot.Add(GameObject.Find("controller_l").transform.rotation);
         }
         else if ((i != -1) && (i == numFramesTrackingLag - 1))
         {
@@ -59,16 +67,22 @@ public class LagBehaviour : MonoBehaviour
             rightEyePos.Add(GameObject.Find("rparent").transform.position);
             leftEyeRot.Add(GameObject.Find("lparent").transform.rotation);
             rightEyeRot.Add(GameObject.Find("rparent").transform.rotation);
+            controllerPos.Add(GameObject.Find("controller_l").transform.position);
+            controllerRot.Add(GameObject.Find("controller_l").transform.rotation);
 
-            /*GameObject.Find("lparent").transform.position = leftEyePos[0];
+            GameObject.Find("lparent").transform.position = leftEyePos[0];
             GameObject.Find("rparent").transform.position = rightEyePos[0];
             GameObject.Find("lparent").transform.rotation = leftEyeRot[0];
-            GameObject.Find("rparent").transform.rotation = rightEyeRot[0];*/
+            GameObject.Find("rparent").transform.rotation = rightEyeRot[0];
+            GameObject.Find("controller_l").transform.position = controllerPos[0];
+            GameObject.Find("controller_l").transform.rotation = controllerRot[0];
 
             leftEyePos.RemoveAt(0);
             rightEyePos.RemoveAt(0);
             leftEyeRot.RemoveAt(0);
             rightEyeRot.RemoveAt(0);
+            controllerPos.RemoveAt(0);
+            controllerRot.RemoveAt(0);
         }
 
         // Rendering Lag
