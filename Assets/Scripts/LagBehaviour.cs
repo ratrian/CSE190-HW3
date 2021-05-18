@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class LagBehaviour : MonoBehaviour
 {
@@ -24,6 +25,13 @@ public class LagBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameObject.Find("lparent").transform.position = InputTracking.GetLocalPosition(XRNode.LeftEye);
+        GameObject.Find("rparent").transform.position = InputTracking.GetLocalPosition(XRNode.RightEye);
+        GameObject.Find("lparent").transform.rotation = InputTracking.GetLocalRotation(XRNode.LeftEye);
+        GameObject.Find("rparent").transform.rotation = InputTracking.GetLocalRotation(XRNode.RightEye);
+        GameObject.Find("controller_l").transform.position = InputTracking.GetLocalPosition(XRNode.LeftHand);
+        GameObject.Find("controller_l").transform.rotation = InputTracking.GetLocalRotation(XRNode.LeftHand);
+
         // Tracking Lag
         if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
         {
@@ -54,21 +62,21 @@ public class LagBehaviour : MonoBehaviour
         if (i < numFramesTrackingLag - 1)
         {
             i++;
-            leftEyePos.Add(GameObject.Find("lparent").transform.position);
-            rightEyePos.Add(GameObject.Find("rparent").transform.position);
-            leftEyeRot.Add(GameObject.Find("lparent").transform.rotation);
-            rightEyeRot.Add(GameObject.Find("rparent").transform.rotation);
-            controllerPos.Add(GameObject.Find("controller_l").transform.position);
-            controllerRot.Add(GameObject.Find("controller_l").transform.rotation);
+            leftEyePos.Add(InputTracking.GetLocalPosition(XRNode.LeftEye));
+            rightEyePos.Add(InputTracking.GetLocalPosition(XRNode.RightEye));
+            leftEyeRot.Add(InputTracking.GetLocalRotation(XRNode.LeftEye));
+            rightEyeRot.Add(InputTracking.GetLocalRotation(XRNode.RightEye));
+            controllerPos.Add(InputTracking.GetLocalPosition(XRNode.LeftHand));
+            controllerRot.Add(InputTracking.GetLocalRotation(XRNode.LeftHand));
         }
         else if ((i != -1) && (i == numFramesTrackingLag - 1))
         {
-            leftEyePos.Add(GameObject.Find("lparent").transform.position);
-            rightEyePos.Add(GameObject.Find("rparent").transform.position);
-            leftEyeRot.Add(GameObject.Find("lparent").transform.rotation);
-            rightEyeRot.Add(GameObject.Find("rparent").transform.rotation);
-            controllerPos.Add(GameObject.Find("controller_l").transform.position);
-            controllerRot.Add(GameObject.Find("controller_l").transform.rotation);
+            leftEyePos.Add(InputTracking.GetLocalPosition(XRNode.LeftEye));
+            rightEyePos.Add(InputTracking.GetLocalPosition(XRNode.RightEye));
+            leftEyeRot.Add(InputTracking.GetLocalRotation(XRNode.LeftEye));
+            rightEyeRot.Add(InputTracking.GetLocalRotation(XRNode.RightEye));
+            controllerPos.Add(InputTracking.GetLocalPosition(XRNode.LeftHand));
+            controllerRot.Add(InputTracking.GetLocalRotation(XRNode.LeftHand));
 
             GameObject.Find("lparent").transform.position = leftEyePos[0];
             GameObject.Find("rparent").transform.position = rightEyePos[0];
