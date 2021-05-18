@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class LagBehaviour : MonoBehaviour
@@ -39,7 +40,6 @@ public class LagBehaviour : MonoBehaviour
             {
                 numFramesRenderingDelay--;
             }
-            //
         }
         else if (OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger))
         {
@@ -47,8 +47,8 @@ public class LagBehaviour : MonoBehaviour
             {
                 numFramesRenderingDelay++;
             }
-            //
         }
         GameObject.Find("RenderingDelay").GetComponent<UnityEngine.UI.Text>().text = "Rendering Delay:\n" + numFramesRenderingDelay.ToString() + " frames";
+        Thread.Sleep(1000 * numFramesRenderingDelay / 90);
     }
 }
