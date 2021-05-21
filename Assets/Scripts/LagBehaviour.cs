@@ -25,13 +25,6 @@ public class LagBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*GameObject.Find("lparent").transform.position = InputTracking.GetLocalPosition(XRNode.LeftEye);
-        GameObject.Find("rparent").transform.position = InputTracking.GetLocalPosition(XRNode.RightEye);
-        GameObject.Find("lparent").transform.rotation = InputTracking.GetLocalRotation(XRNode.LeftEye);
-        GameObject.Find("rparent").transform.rotation = InputTracking.GetLocalRotation(XRNode.RightEye);
-        GameObject.Find("controller_l").transform.position = InputTracking.GetLocalPosition(XRNode.LeftHand);
-        GameObject.Find("controller_l").transform.rotation = InputTracking.GetLocalRotation(XRNode.LeftHand);*/
-
         // Tracking Lag
         if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
         {
@@ -82,7 +75,7 @@ public class LagBehaviour : MonoBehaviour
             GameObject.Find("rparent").transform.position = new Vector3(rightEyePos[0].x, rightEyePos[0].y + 0.675f, rightEyePos[0].z);
             GameObject.Find("lparent").transform.rotation = leftEyeRot[0];
             GameObject.Find("rparent").transform.rotation = rightEyeRot[0];
-            GameObject.Find("controller_l").transform.position = controllerPos[0];
+            GameObject.Find("controller_l").transform.position = new Vector3(controllerPos[0].x, controllerPos[0].y + 0.675f, controllerPos[0].z);
             GameObject.Find("controller_l").transform.rotation = controllerRot[0];
 
             leftEyePos.RemoveAt(0);
